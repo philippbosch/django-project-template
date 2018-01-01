@@ -1,0 +1,8 @@
+__pycache__
+pgdata
+node_modules
+{{ project_name }}/settings/local.py
+media
+/src
+*.dump
+.env

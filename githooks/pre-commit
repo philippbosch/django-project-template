@@ -1,0 +1,15 @@
+#!/bin/bash
+echo 'Checking for missing migrations …'
+docker-compose run web python manage.py makemigrations --dry-run --no-input --check
+
+if [ $? -ne 0 ]
+then
+  echo "🚨 Missing migrations found, commit aborted "
+  exit 1
+else
+  echo "OK"
+fi
+
+
+echo 'Checking Python code style with Flake8 …'
+flake8 && echo "OK" || exit 1

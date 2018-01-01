@@ -1,0 +1,20 @@
+version: '3'
+services:
+  db:
+    image: postgres:9.6
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - .:/code
+      - /code/pgdata # Prevents Postgres data dir from being copied into the web container
+    ports:
+      - "9000:8000"
+    depends_on:
+      - db
+

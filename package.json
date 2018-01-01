@@ -1,0 +1,16 @@
+{
+  "name": "{{ project_name }}",
+  "version": "1.0.0",
+  "description": "## Development environment set-up",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit": "./githooks/pre-commit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "husky": "^0.14.3"
+  }
+}

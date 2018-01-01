@@ -1,0 +1,27 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}" dir="{% if LANGUAGE_CODE|language_bidi %}rtl{% else %}ltr{% endif %}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>{{ request.site.name }}</title>
+    <meta name="description" content="" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
+    <link rel="mask-icon" href="{% static 'safari-pinned-tab.svg' %}" color="#fb4137">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <meta name="msapplication-config" content="{% static 'browserconfig.xml' %}">
+    <meta name="theme-color" content="#fb4137">
+    <link rel="manifest" href="{% static 'manifest.json' %}" />
+  </head>
+
+  <body class="{% block body_class %}{% endblock %}">
+    <div class="container">
+      {% block content %}
+        Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.
+      {% endblock %}
+    </div>
+  </body>
+</html>
