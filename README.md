@@ -1,35 +1,21 @@
-# {{ project_name }}
+# Django Project Template (opinionated!)
 
-## Development environment set-up
+Uses
+- Django
+- Postgres
+- Docker Compose
+- Heroku
+- …
+
+
+## Creating a new Django project using this template
 
 ```shell
-$ git clone git@github.com:philippbosch/{{ project_name }}.git
-$ touch .env
-$ docker-compose build
-$ docker-compose up
+$ django-admin startproject \
+    --template https://github.com/philippbosch/django-project-template/archive/master.zip \
+    -e py,json,sh -n Dockerfile,Procfile,.gitignore \
+    <project name>
+$ cd <project name>
+$ docker-compose up --build
 $ docker-compose run --rm web python manage.py migrate
-$ docker-compose run --rm web python manage.py createsuperuser
 ```
-
-## Running the development stack
-
-```shell
-$ docker-compose up
-```
-
-## Styles development
-
-Ensure that all required npm packages are installed with `npm install` and
-that the Django development server is running, then run the `dev` command.
-
-```shell
-$ npm install
-$ npm run dev
-```
-
-The site will be proxied by BrowserSync at [`http://localhost:3000`](http://localhost:3000).
-
-The `npm run dev` command runs in watch mode, rebuilding the styles and
-automatically refreshing the site whenever changes are detected.
-
-See [STYLEGUIDE.md](STYLEGUIDE.md) for an introduction to the styles system.
